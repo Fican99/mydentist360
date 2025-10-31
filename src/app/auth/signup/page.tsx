@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
-import { Section, Block, Button } from '@/devlink/_Builtin'
+import { Section, Block } from '@/devlink/_Builtin'
 
 export default function SignUpPage() {
   const [email, setEmail] = useState('')
@@ -230,7 +230,7 @@ export default function SignUpPage() {
             </div>
           )}
 
-          <Button
+          <button
             type="submit"
             disabled={loading}
             style={{
@@ -246,7 +246,7 @@ export default function SignUpPage() {
             }}
           >
             {loading ? 'Creating account...' : 'Sign Up'}
-          </Button>
+          </button>
         </form>
 
         <p style={{ marginTop: '1.5rem', textAlign: 'center', fontSize: '0.875rem' }}>

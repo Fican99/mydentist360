@@ -1,7 +1,7 @@
 "use client"
 
 import { useAuth } from '@/contexts/AuthContext'
-import { Button, Link } from '@/devlink/_Builtin'
+import { Link } from '@/devlink/_Builtin'
 
 export function UserStatus() {
   const { user, loading, signOut } = useAuth()
