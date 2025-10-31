@@ -1,11 +1,11 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Section, Block } from '@/devlink/_Builtin'
 
-export default function SignInPage() {
+function SignInForm() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
@@ -183,6 +183,27 @@ export default function SignInPage() {
         </p>
       </Block>
     </Section>
+  )
+}
+
+export default function SignInPage() {
+  return (
+    <Suspense fallback={
+      <Section
+        tag="section"
+        style={{
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '2rem',
+        }}
+      >
+        <div style={{ textAlign: 'center' }}>Loading...</div>
+      </Section>
+    }>
+      <SignInForm />
+    </Suspense>
   )
 }
 
