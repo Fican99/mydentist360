@@ -23,6 +23,16 @@ export default function Home() {
             margin: "0 auto",
           }}
         >
+          <h2
+            style={{
+              fontSize: "1.5rem",
+              fontWeight: 600,
+              marginBottom: "1rem",
+              color: "#146ef5",
+            }}
+          >
+            Hello! 👋
+          </h2>
           <h1
             className="margin-bottom-24px"
             style={{
